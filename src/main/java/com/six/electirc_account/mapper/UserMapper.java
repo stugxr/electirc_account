@@ -11,6 +11,17 @@ import org.apache.ibatis.annotations.Select;
  * @Version: 1.0
  */
 public interface UserMapper {
-    @Select("select uname,pwd from sz_user where uname=#{uname} and pwd=#{pwd}")
+    @Select("select user_id,user_name,user_password from user where user_name=#{uname} and user_password=#{pwd}")
     User selUserByUnamAndPwd(@Param("uname") String uname, @Param("pwd")String pwd);
+
+    /**
+     *
+     * @Description:根据bankId获取银行卡密码
+     * @author gxr
+     * @date 2021/6/13 6:29 下午
+     * @param * @param userId
+     * @return java.lang.String
+     */
+    @Select("select bank_pwd from bankaccount where user_id=#{userId}")
+    String selBankCardPwd(int userId);
 }

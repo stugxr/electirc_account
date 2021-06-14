@@ -1,6 +1,7 @@
 package com.six.electirc_account.entity;
 
-import java.util.Date;
+
+import javax.persistence.Transient;
 
 /**
  * @Description: 用户实体类
@@ -9,60 +10,84 @@ import java.util.Date;
  * @Version: 1.0
  */
 public class User {
-    private int id;
-    private String uname;
-    private int loginStatus;
-    private Date lastLogTime;
+    private int userId;
+    private String userName;
+    private String userPassword;
+    private String userIDCard;
+    private String telNo;
+    private int userLevel;
+    @Transient
+    private boolean authorizeStatus;
+
+    public boolean isAuthorizeStatus() {
+        return authorizeStatus;
+    }
+
+    public void setAuthorizeStatus(boolean authorizeStatus) {
+        this.authorizeStatus = authorizeStatus;
+    }
+
+    public int getUserLevel() {
+        return userLevel;
+    }
+
+    public void setUserLevel(int userLevel) {
+        this.userLevel = userLevel;
+    }
 
     public User() {
     }
 
-    public User(int id, String uname, int loginStatus, Date lastLogTime) {
-        this.id = id;
-        this.uname = uname;
-        this.loginStatus = loginStatus;
-        this.lastLogTime = lastLogTime;
+
+
+    public int getUserId() {
+        return userId;
     }
 
-    public int getId() {
-        return id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getUserName() {
+        return userName;
     }
 
-    public String getUname() {
-        return uname;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public void setUname(String uname) {
-        this.uname = uname;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public int getLoginStatus() {
-        return loginStatus;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
-    public void setLoginStatus(int loginStatus) {
-        this.loginStatus = loginStatus;
+    public String getUserIDCard() {
+        return userIDCard;
     }
 
-    public Date getLastLogTime() {
-        return lastLogTime;
+    public void setUserIDCard(String userIDCard) {
+        this.userIDCard = userIDCard;
     }
 
-    public void setLastLogTime(Date lastLogTime) {
-        this.lastLogTime = lastLogTime;
+    public String getTelNo() {
+        return telNo;
+    }
+
+    public void setTelNo(String telNo) {
+        this.telNo = telNo;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", uname='" + uname + '\'' +
-                ", loginStatus=" + loginStatus +
-                ", lastLogTime=" + lastLogTime +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userIDCard='" + userIDCard + '\'' +
+                ", telNo='" + telNo + '\'' +
                 '}';
     }
 }
