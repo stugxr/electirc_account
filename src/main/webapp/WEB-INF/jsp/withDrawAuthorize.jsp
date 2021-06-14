@@ -40,7 +40,7 @@
     <div id="login">
         <fieldset>
             <div id="legend" class="">
-                <legend class="">授权</legend>
+                <legend class="">提现授权</legend>
             </div>
             <form class="form-horizontal" role="form" action="authorizeTransfer">
                 <div class="form-group">

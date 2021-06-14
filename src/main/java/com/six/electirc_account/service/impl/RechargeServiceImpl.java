@@ -4,28 +4,22 @@ import com.six.electirc_account.constant.TransferConstant;
 import com.six.electirc_account.entity.FinancialFlow;
 import com.six.electirc_account.entity.User;
 import com.six.electirc_account.mapper.WithDrawMapper;
-import com.six.electirc_account.service.WithDrawService;
+import com.six.electirc_account.service.RechargeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-/**
- * @Description: 提现服务实现类
- * @Author: gxr
- * @Date: 2021/6/13 12:25 下午
- * @Version: 1.0
- */
 @Service
-public class WithDrawServiceImpl implements WithDrawService {
+public class RechargeServiceImpl implements RechargeService {
     @Autowired
     WithDrawMapper withDrawMapper;
 
     @Override
-    public void generateFinancialFlow(String bankType, BigDecimal withDrawMoney,HttpSession session) {
-
+    public void generateFinancialFlow(String bankType, BigDecimal rechargeMoney, BigDecimal bankMoney,HttpSession session) {
         User user=(User)session.getAttribute("user");
         //设置流水号属性值
         FinancialFlow financialFlow = new FinancialFlow();
@@ -36,20 +30,19 @@ public class WithDrawServiceImpl implements WithDrawService {
         //客户姓名
         financialFlow.setTransferName(user.getUserName());
         //交易类型类型
-        financialFlow.setTransferType(TransferConstant.TRANSFER_WITHDRAW);
+        financialFlow.setTransferType(TransferConstant.TRANSFER_RECHARGE);
         //交易时间
         financialFlow.setTransferDate(new Timestamp(System.currentTimeMillis()));
         //交易渠道
         financialFlow.setTradingMode(TransferConstant.TRADING_MODE);
         //交易金额
-        financialFlow.setTransferAmount(withDrawMoney);
+        financialFlow.setTransferAmount(rechargeMoney);
         //查询银行卡余额
-        BigDecimal balance = withDrawMapper.selBankBalance(user.getUserId(),bankType);
-        financialFlow.setBalance(balance);
+        financialFlow.setBalance(bankMoney);
         //备注
-        financialFlow.setRemarks(TransferConstant.REMARK_WITHDRAW_ONE);
+        financialFlow.setRemarks(TransferConstant.REMARK_RECHARGE_ONE);
         //交易状态
-        financialFlow.setTransferState(TransferConstant.TRANSFER_SUCCESS_STATUS);
+        financialFlow.setTransferState(TransferConstant.RECHARGE_SUCCESS_STATUS);
         //柜员号
         financialFlow.setTellerNumber(TransferConstant.TELLER_NO_ONE);
         //货币种类
@@ -66,32 +59,31 @@ public class WithDrawServiceImpl implements WithDrawService {
     }
 
     @Override
-    public void addBankBalance(BigDecimal withDrawMoney, String bankType, int userId) {
+    public void reduceBankBalance(BigDecimal rechargeMoney, String bankType, int userId) {
         //根据用户id和银行卡类型查询余额
         BigDecimal bankMoney = withDrawMapper.selBankBalance(userId, bankType);
         if(bankMoney!=null){
-            //银行卡金额进行增加
-            BigDecimal dealBankMoney=bankMoney.add(withDrawMoney);
+            //银行卡金额减少
+            BigDecimal dealBankMoney=bankMoney.subtract(rechargeMoney);
             //更新数据库
             withDrawMapper.updBalance(dealBankMoney,bankType,userId);
         }
-
     }
 
     @Override
-    public void subElatricAccountMoney(BigDecimal withDrawMoney, int userId) {
+    public void addAccountMoney(BigDecimal rechargeMoney, int userId) {
         //根据userId查询电子账户余额
         BigDecimal elatricMoney=withDrawMapper.selElatricMoney(userId);
         if(elatricMoney!=null){
             //电子账户余额减少
-            BigDecimal dealElatricMoney = elatricMoney.subtract(withDrawMoney);
+            BigDecimal dealElatricMoney = elatricMoney.add(rechargeMoney);
             //更新数据库
             withDrawMapper.updElatricMoney(dealElatricMoney,userId);
         }
     }
 
     @Override
-    public BigDecimal getElatricMoney(int userId) {
-        return withDrawMapper.selElatricMoney(userId);
+    public BigDecimal getBankMoney(int userId, String bankType) {
+        return withDrawMapper.selBankBalance(userId,bankType);
     }
 }

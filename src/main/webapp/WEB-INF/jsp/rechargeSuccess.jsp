@@ -20,16 +20,7 @@
             height: 100px;
             margin: 126px auto;
         }
-        .authorizeFail{
-            color: red;
-        }
-        #btn {
-            margin-left: 2px;
-            margin-top: -5px;
-            width: 150px;
-            height: 25px;
-            font-size: 11px;
-        }
+
         body {
             background-color: #ecfcf9;
         }
@@ -40,19 +31,9 @@
     <div id="login">
         <fieldset>
             <div id="legend" class="">
-                <legend class="">授权</legend>
+                <legend class="">充值成功</legend>
+                <a href="http://localhost:8088/toCost">回到余额管理</a>
             </div>
-            <form class="form-horizontal" role="form" action="authorizeTransfer">
-                <div class="form-group">
-                    <label class="authorizeFail">${authorizeFail}</label>
-                    <label class="col-sm-2 control-label">支付密码</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" id="phone" name="authorizePwd"
-                               placeholder="请输入您的支付密码" required>
-                    </div><br><br>
-                    <div id="btn"><button class="btn btn-large btn-primary" type="submit">确定</button></div>
-                </div>
-            </form>
         </fieldset>
     </div>
 </div>

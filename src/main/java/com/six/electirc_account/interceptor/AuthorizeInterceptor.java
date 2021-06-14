@@ -33,16 +33,18 @@ public class AuthorizeInterceptor implements HandlerInterceptor {
             //有的话进行需要拦截
             //获取session里的用户信息
             User user = (User)request.getSession().getAttribute("user");
-            //获取cookie中的加了密的用户信息
-            String cookieValue = CookieUtil.getCookieValue(request, UserConstant.COOKIE_USER_NAME, true);
-            //将用户信息与加了密的用户信息进行校验
-            boolean enCodeResult = Md5Util.validPassword(user.toString(), cookieValue);
-            if(enCodeResult){
-                //一致则放行
-                return true;
+            if(user!=null){
+                //获取cookie中的加了密的用户信息
+                String cookieValue = CookieUtil.getCookieValue(request, UserConstant.COOKIE_USER_NAME, true);
+                //将用户信息与加了密的用户信息进行校验
+                boolean enCodeResult = Md5Util.validPassword(user.toString(), cookieValue);
+                if(enCodeResult){
+                    //一致则放行
+                    return true;
+                }
             }
             //不一致重定向到登录页面
-            response.sendRedirect("http://localhost:8088/");
+            response.sendRedirect("http://localhost:8088/toLogin");
             return false;
         }
         //如果是一次静态资源的请求则该handler不应该是HandlerMethod的实现类

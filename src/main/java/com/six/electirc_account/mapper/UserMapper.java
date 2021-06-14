@@ -22,6 +22,6 @@ public interface UserMapper {
      * @param * @param userId
      * @return java.lang.String
      */
-    @Select("select bank_pwd from bankaccount where user_id=#{userId}")
-    String selBankCardPwd(int userId);
+    @Select("select bank_pwd from bankaccount where user_id=#{userId} and bank_type=#{bankType}")
+    String selBankCardPwd(int userId,String bankType);
 }

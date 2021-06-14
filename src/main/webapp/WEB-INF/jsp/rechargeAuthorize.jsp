@@ -40,11 +40,11 @@
     <div id="login">
         <fieldset>
             <div id="legend" class="">
-                <legend class="">授权</legend>
+                <legend class="">充值授权</legend>
             </div>
             <form class="form-horizontal" role="form" action="authorizeTransfer">
                 <div class="form-group">
-                    <label class="authorizeFail">${authorizeFail}</label>
+                    <label class="authorizeFail">${errorMsg}</label>
                     <label class="col-sm-2 control-label">支付密码</label>
                     <div class="col-sm-5">
                         <input type="text" class="form-control" id="phone" name="authorizePwd"

@@ -31,9 +31,10 @@ public interface UserService {
      * @author gxr
      * @date 2021/6/13 6:26 下午
      * @param userId
+     * @param bankType
      * @return java.lang.String
      */
-    String getBankCadPwd(int userId);
+    String getBankCadPwd(int userId,String bankType);
 
     /**
      *

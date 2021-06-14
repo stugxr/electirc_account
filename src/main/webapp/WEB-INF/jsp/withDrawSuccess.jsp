@@ -32,7 +32,7 @@
         <fieldset>
             <div id="legend" class="">
                 <legend class="">提现成功</legend>
-                <a href="main.jsp">回到主页</a>
+                <a href="http://localhost:8088/toCost">回到余额管理</a>
 
             </div>
         </fieldset>

@@ -44,4 +44,14 @@ public interface WithDrawService {
      * @return void
      */
     void subElatricAccountMoney(BigDecimal withDrawMoney, int userId);
+
+    /**
+     *
+     * @Description:根据用户id查询电子账户余额
+     * @author gxr
+     * @date 2021/6/14 6:13 下午
+     * @param * @param userId
+     * @return java.math.BigDecimal
+     */
+    BigDecimal getElatricMoney(int userId);
 }

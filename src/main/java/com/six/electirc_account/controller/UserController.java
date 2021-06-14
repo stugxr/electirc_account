@@ -57,15 +57,15 @@ public class UserController {
                     e.printStackTrace();
                 }
                 //跳转到主页
-                return "main";
+                return "UserIndex";
             } else {
                 //跳到登录页面
                 model.addAttribute("errorMsg", MessageConstant.USER_EXIST_MSG);
-                return "login";
+                return "login1";
             }
         }
         //跳到登录页面
         model.addAttribute("errorMsg", MessageConstant.LACK_UNAME_MSG);
-        return "login";
+        return "login1";
     }
 }

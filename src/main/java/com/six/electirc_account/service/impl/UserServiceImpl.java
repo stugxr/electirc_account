@@ -32,8 +32,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String getBankCadPwd(int userId) {
-        return userMapper.selBankCardPwd(userId);
+    public String getBankCadPwd(int userId,String bankType) {
+        return userMapper.selBankCardPwd(userId,bankType);
     }
 
     @Override
