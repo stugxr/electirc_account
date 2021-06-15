@@ -40,7 +40,7 @@
                 <nav class="wthree-w3ls">
                     <div id="logo">
                         <h1> 
-						<a class="navbar-brand px-0 mx-0" href="#">EZ4LIFE</a>
+						<a class="navbar-brand px-0 mx-0" href="#">电子账户</a>
                         </h1>
                     </div>
 
@@ -122,7 +122,7 @@
         <div class="container p-md-5">
             <div class="about-hny-info text-left px-md-5">
                 <h3 class="tittle-w3ls mb-3"><span class="pink">关于</span> 我们</h3>
-                <p class="sub-tittle mt-3 mb-4">这里填写项目简介。</p>
+                <p class="sub-tittle mt-3 mb-4">我们是一支十人的小团队，是一支年轻的团队，是一支独具特色的方案设计团队。我们的团队成员有陈天宇、李鹏辉、陈钊、李强、张二杰、赵鸿波、黄远洋、郭鑫仁、王一淋、李渊，我们都是即将毕业的大四学生，在设计系统方面我们没有特别丰富的实战经验，对于竞争激烈的方案设计市场来说我们的工作经验也远远不足，所以我们是一支年轻的队伍。但也正是因为我们的年轻，我们更具有拼劲，是一支能打硬仗的力量型队伍，无论面对多难出手的方案我们从来都不畏惧，无论面对多么紧张的时间要求我们也都能在有限的时间里努力创造亮点。</p>
                 <a class="btn more black" href="http://localhost:8088/toSingle" role="button">Read More</a>
             </div>
         </div>
@@ -134,7 +134,7 @@
                 <div class="row my-4">
                     <div class="col-lg-5 services-innfo pr-5">
                         <h3 class="tittle-w3ls two mb-3 text-left"><span class="pink">我们</span>提供</h3>
-                        <p class="sub-tittle mt-2 mb-sm-3 text-left">这里填写项目提供的业务。</p>
+                        <p class="sub-tittle mt-2 mb-sm-3 text-left">我们是一支十人的小团队，是一支年轻的团队，是一支独具特色的方案设计团队。我们的团队成员有陈天宇、李鹏辉、陈钊、李强、张二杰、赵鸿波、黄远洋、郭鑫仁、王一淋、李渊，我们都是即将毕业的大四学生，在设计系统方面我们没有特别丰富的实战经验，对于竞争激烈的方案设计市场来说我们的工作经验也远远不足，所以我们是一支年轻的队伍。但也正是因为我们的年轻，我们更具有拼劲，是一支能打硬仗的力量型队伍，无论面对多难出手的方案我们从来都不畏惧，无论面对多么紧张的时间要求我们也都能在有限的时间里努力创造亮点。</p>
                         <a href="services.html"><img src="images/ab2.jpg" alt="w3pvt" class="img-fluid"></a>
                     </div>
                     <div class="col-lg-7 services-grid-inf">
