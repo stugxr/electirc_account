@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -6,10 +6,10 @@
     <title>Cost</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="" />
+    <meta charset="UTF-8"/>
+    <meta name="keywords" content=""/>
     <script>
-        addEventListener("load", function() {
+        addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
 
@@ -18,88 +18,145 @@
         }
 
     </script>
+
+
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all"/>
     <!-- Style-CSS -->
     <!-- font-awesome-icons -->
     <link href="../css/font-awesome.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
 
+
 </head>
 <body>
-    <!--/home -->
-    <div id="home" class="inner-w3pvt-page">
-        <div class="overlay-innerpage">
-            <!--/top-nav -->
-            <div class="top_w3pvt_main container">
-                <!--/header -->
-                <header class="nav_w3pvt text-center">
-                    <!-- nav -->
-                    <nav class="wthree-w3ls">
-                        <div id="logo">
-                            <h1> <a class="navbar-brand px-0 mx-0" href="index.jsp">电子账户</a>
-                            </h1>
-                        </div>
+<!--/home -->
+<div id="home" class="inner-w3pvt-page">
+    <div class="overlay-innerpage">
+        <!--/top-nav -->
+        <div class="top_w3pvt_main container">
+            <!--/header -->
+            <header class="nav_w3pvt text-center">
+                <!-- nav -->
+                <nav class="wthree-w3ls">
+                    <div id="logo">
+                        <h1><a class="navbar-brand px-0 mx-0" href="index.jsp">电子账户</a>
+                        </h1>
+                    </div>
 
-                        <label for="drop" class="toggle">Menu</label>
-                        <input type="checkbox" id="drop" />
-                        <ul class="menu mr-auto">
-                            <li><a href="http://localhost:8088/toUserIndex">首页</a></li>
-                        </ul>
-                    </nav>
-                    <!-- //nav -->
-                </header>
-                <!--//header -->
+                    <label for="drop" class="toggle">Menu</label>
+                    <input type="checkbox" id="drop"/>
+                    <ul class="menu mr-auto">
+                        <li><a href="index.jsp">首页</a></li>
+                    </ul>
+                </nav>
+                <!-- //nav -->
+            </header>
+            <!--//header -->
 
-                <!--/breadcrumb-->
-                <div class="inner-w3pvt-page-info">
-                    <ol class="breadcrumb d-flex">
-                        <li class="breadcrumb-item">
-                            <a href="http://localhost:8088/toUserIndex">首页</a>
-                        </li>
-                        <li class="breadcrumb-item active">流水查询</li>
-                    </ol>
+            <!--/breadcrumb-->
+            <div class="inner-w3pvt-page-info">
+                <ol class="breadcrumb d-flex">
+                    <li class="breadcrumb-item">
+                        <a href="index.jsp">首页</a>
+                    </li>
+                    <li class="breadcrumb-item active">流水查询</li>
+                </ol>
 
-                </div>
-                <!--//breadcrumb-->
             </div>
-            <!-- //top-nav -->
+            <!--//breadcrumb-->
         </div>
+        <!-- //top-nav -->
     </div>
-    <!-- //about -->
-	<!--/Cost-->
+</div>
+<!-- //about -->
+<!--/Cost-->
+<%--    rivate long transferId;--%>
+<%--    private long userId;--%>
+<%--    private String transferName;--%>
+<%--    private String transferType;--%>
+<%--    private java.sql.Timestamp transferDate;--%>
+<%--    private String remarks;--%>
+<%--    private BigDecimal balance;--%>
+<%--    private String transferState;--%>
+<%--    private String tradingMode;--%>
+<%--    private BigDecimal transferAmount;--%>
+<%--    private long tellerNumber;--%>
+<%--    private String typesCurrency;--%>
+<%--    private String enjambment;--%>
+<%--    private String customerLevel;--%>
+<%--    private long serviceCharge;--%>
+<%--    private String transferCode;--%>
+<section class="about py-6">
+    <div class="container p-md-6">
+        <h3 class="tittle-w3ls text-center">流水表</h3><br/>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <tr class="">
+                    <th>交易单号</th>
+                    <th>客户名称</th>
+                    <th>转账类型</th>
+                    <th>交易时间</th>
+                    <th>账户余额</th>
+                    <th>交易状态</th>
+                    <th>交易渠道</th>
+                    <th>转账金额</th>
+                    <th>柜员号</th>
+                    <th>货币种类</th>
+                    <th>手续费</th>
+                    <th>交易单号</th>
 
-    <section class="about py-6">
-	    <div class="container p-md-6">
-	        <h3 class="tittle-w3ls text-center">流水表</h3><br/>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <tr class="">
-                        <th>交易编号</th><th>收款账号</th><th>交易名称</th><th>交易方式</th>
-                        <th>交易时间</th><th>交易备注</th><th>客户余额</th><th>交易状态</th>
-                        <th>交易模式</th><th>转账金额</th><th>柜员账号</th><th>货币类型</th>
-                        <th>跨行交易</th><th>客户等级</th><th>服务费用</th><th>转账代码</th>
 
+                </tr>
+                <tr class="">
+                    <th>${requestScope.data.transferId}</th>
+                    <th>${requestScope.data.transferName}</th>
+                    <th>${requestScope.data.transferType}</th>
+                    <th>${requestScope.data.transferDate}</th>
+                    <th>${requestScope.data.balance}</th>
+                    <th>${requestScope.data.transferState}</th>
+                    <th>${requestScope.data.tradingMode}</th>
+                    <th>${requestScope.data.transferAmount}</th>
+                    <th>${requestScope.data.tellerNumber}</th>
+                    <th>${requestScope.data.typesCurrency}</th>
+                    <th>${requestScope.data.serviceCharge}</th>
+                    <th>${requestScope.data.transferCode}</th>
+                </tr>
 
-                    </tr>
-                    <tr class="">
-                        <th>*</th><th>*</th><th>*</th><th>*</th>
-                        <th>*</th><th>*</th><th>*</th><th>*</th>
-                        <th>*</th><th>*</th><th>*</th><th>*</th>
-                        <th>*</th><th>*</th><th>*</th><th>*</th>
+            </table>
+        </div>
 
-                    </tr>
+    </div>
 
-                </table>
-            </div>
+    <div class="container">
+        <nav aria-label="Page navigation" class="">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-	    </div>
-	</section>
-	<!--//Cost-->
-    <!--/services-->
+</section>
+<!--//Cost-->
+<!--/services-->
 <%--    <section class="services" id="services">--%>
 <%--        <div class="over-lay-blue py-5">--%>
 <%--            <div class="container py-md-5">--%>
@@ -171,7 +228,7 @@
 <%--            </div>--%>
 <%--        </div>--%>
 <%--    </section>--%>
-    <!--//services-->
+<!--//services-->
 </body>
 
 </html>
